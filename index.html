@@ -448,7 +448,7 @@ var id=s[0]||'';if(!id&&location.hash)id=location.hash.slice(1);if(!id||!ok(id))
 function setLang(l){if(l!==lg()){var b=document.querySelector('.lang button[data-l="'+l+'"]');if(b)b.click()}}
 function route(st){history.replaceState(null,'',BASE+'#'+st.id);r();sync(st.id)}
 addEventListener('hashchange',function(){var h=(location.hash||'#home').slice(1);if(h==='form')return;if(!ok(h))h='home';sync(h)});
-addEventListener('popstate',function(){var st=parse();setLang(st.lang);route(st)});
+addEventListener('popstate',function(){if(location.hash)return;var st=parse();setLang(st.lang);route(st)});
 document.addEventListener('click',function(e){if(e.target.closest('.lang button'))sync(CUR)});
 var st=parse();if(!st.pref&&st.id==='home')st.lang=lg();setLang(st.lang);route(st);
 })()</script></body></html>
