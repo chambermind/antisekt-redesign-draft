@@ -447,6 +447,7 @@ var s=rel.split('/').filter(Boolean);if(s[0]==='index.html')s.shift();var pref=f
 var id=s[0]||'';if(!id&&location.hash)id=location.hash.slice(1);if(!id||!ok(id))id='home';return{lang:l,id:id,pref:pref}}
 function setLang(l){if(l!==lg()){var b=document.querySelector('.lang button[data-l="'+l+'"]');if(b)b.click()}}
 function route(st){history.replaceState(null,'',BASE+'#'+st.id);r();sync(st.id)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.button)return;var id=a.getAttribute('href').slice(1);if(!id||id==='form'||id==='main'||!ok(id))return;e.preventDefault();history.pushState(null,'',BASE+'#'+id);r();sync(id)});
 addEventListener('hashchange',function(){var h=(location.hash||'#home').slice(1);if(h==='form')return;if(!ok(h))h='home';sync(h)});
 addEventListener('popstate',function(){if(location.hash)return;var st=parse();setLang(st.lang);route(st)});
 document.addEventListener('click',function(e){if(e.target.closest('.lang button'))sync(CUR)});
