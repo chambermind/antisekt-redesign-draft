@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Антисект — помощь тем, кого затянула секта или контролирующая группа (прототип)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Manrope:wght@400;500;700&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{--bg:#faf7f2;--card:#fff;--ink:#2b2622;--mut:#6b625a;--acc:#7a4a2b;--acc2:#e9dccd;--ok:#2f6b4f;--r:18px}
+*{box-sizing:border-box}body{margin:0;font:17px/1.65 Manrope,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:Lora,Georgia,serif;line-height:1.25;margin:0 0 .5em}h1{font-size:clamp(28px,5vw,44px)}h2{font-size:28px}h3{font-size:20px}
+a{color:var(--acc)}.w{max-width:1000px;margin:0 auto;padding:0 20px}
+.proto{background:#2b2622;color:#f3e9dc;font-size:13px;text-align:center;padding:6px 12px}
+header{background:var(--bg);border-bottom:1px solid var(--acc2);position:sticky;top:0;z-index:5}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
+.logo{font:600 22px Lora,serif;color:var(--acc);text-decoration:none}
+nav a{margin-right:14px;text-decoration:none;color:var(--ink);font-size:15px}
+.hero2 .btn{background:#fff;color:#2b2622}.btn{display:inline-block;background:var(--acc);color:#fff;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;border:0;cursor:pointer;font-size:16px}
+.btn.l{background:var(--acc2);color:var(--acc)}
+.hero{padding:44px 0 20px}.hero p{max-width:680px;color:var(--mut);font-size:19px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:22px 0}
+.route{background:var(--card);border:1px solid var(--acc2);border-radius:var(--r);padding:20px;text-decoration:none;color:var(--ink);display:block;transition:.15s}
+.route:hover{border-color:var(--acc);transform:translateY(-2px)}.route b{display:block;font:600 19px Lora,serif;margin-bottom:6px}.route span{color:var(--mut);font-size:15px}.route i{display:block;margin-top:10px;color:var(--acc);font-style:normal;font-weight:700}
+.safe{background:var(--acc2);border-radius:var(--r);padding:18px 22px;margin:10px 0 30px}
+section.v{display:none;padding:34px 0 50px}section.v.on{display:block}
+.back{display:inline-block;margin-bottom:14px;font-size:15px}
+.box{background:var(--card);border:1px solid var(--acc2);border-radius:var(--r);padding:20px 22px;margin:14px 0}
+.warn{border-left:5px solid #c08a2e}.step{counter-increment:s}.step::before{content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--acc);color:#fff;font-weight:700;margin-right:10px}
+ol.steps{counter-reset:s;padding:0;list-style:none}ol.steps li{margin:10px 0}
+.tl{border-left:3px solid var(--acc2);padding-left:18px}.tl p{margin:0 0 14px}.tl b{color:var(--acc)}
+.ppl{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.av{width:56px;height:56px;border-radius:50%;background:var(--acc2);color:var(--acc);display:grid;place-items:center;font:600 20px Lora,serif;margin-bottom:8px}
+.ph{background:#fff3cd;border:1px dashed #c9a227;border-radius:8px;padding:2px 8px;font-size:14px}
+ul.l{padding-left:20px}footer{background:#2b2622;color:#d9cdbd;padding:30px 0;font-size:14px}footer a{color:#f3e9dc}
+.sticky{position:fixed;bottom:12px;right:12px;z-index:9}@media(min-width:700px){.sticky{display:none}}
+.hero2{text-align:center;position:relative;border-radius:26px;overflow:hidden;margin:20px 0 0;min-height:360px;background:#3b2b20 url(https://antisekt.com/wp-content/uploads/2025/02/big_image.jpg) center/cover}
+.hero2::after{content:"";position:absolute;inset:0;background:rgba(20,12,8,.45)}
+.hero2 .in{position:relative;z-index:1;color:#fff;padding:60px 24px;max-width:760px;margin:0 auto;text-align:center}.hero2 h1{color:#fff}.hero2 p{color:#f0e6da}
+.route img{width:100%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:12px;background:var(--acc2)}
+.av{overflow:hidden}.pho{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;margin-bottom:10px;object-position:top}
+.fig{width:100%;border-radius:14px;margin:10px 0}.small{font-size:14px;color:var(--mut)}
+</style></head><body>
+<div class="proto">Дизайн-прототип. Это не официальный сайт «Антисект». Тексты взяты с antisekt.com, жёлтым помечено то, что нужно уточнить.</div>
+<header><div class="w"><a class="logo" href="#home"><img src="https://antisekt.com/wp-content/uploads/2025/02/logo_en.png" alt="AntiSekt" style="height:38px;display:block"></a>
+<nav><a href="#relatives">Близкому нужна помощь</a><a href="#exmember">Я вышел(ла)</a><a href="#lectures">Узнать больше</a><a href="#about">О нас</a><a href="#contact">Контакты</a></nav>
+<a class="btn" href="#contact">Написать нам</a></div></header>
+<main class="w">
+
+<section class="v" id="home"><div class="hero2"><div class="in"><h1>Близкий попал в секту или в группу, которая его подчиняет? Вы не одни.</h1>
+<p>Мы помогаем семьям и тем, кто вышел из такой группы. Работаем с 1995 года: в Латвии, с 2011 года и в России. Выберите, что ближе к вашей ситуации.</p>
+<a class="btn" href="#contact">Написать нам</a></div></div>
+<div class="grid">
+<a class="route" href="#relatives"><img src="https://antisekt.com/wp-content/uploads/2025/02/return.png" alt=""><b>Мой близкий в секте</b><span>Он изменился, отдалился, не слушает нас. Что делать и чего не делать.</span><i>С чего начать →</i></a>
+<a class="route" href="#exmember"><img src="https://antisekt.com/wp-content/uploads/2025/02/rehabilitation.png" alt=""><b>Я вышел или хочу выйти</b><span>Пустота, страх, вина, недоверие. С этим работают.</span><i>Программа «Жизнь после» →</i></a>
+<a class="route" href="#lectures"><img src="https://antisekt.com/wp-content/uploads/2025/02/lecture.png" alt=""><b>Хочу разобраться и узнать больше</b><span>Лекции и занятия для родителей, школ, вузов и специалистов.</span><i>Темы и приглашение →</i></a></div>
+<div class="safe"><b>Сначала спокойствие.</b> Первое сообщение можно написать анонимно и без подробностей: «Хочу посоветоваться». Мы ответим и объясним, что дальше. <a href="#contact">Контакты</a></div>
+<h2>Почему нам можно доверять</h2>
+<div class="grid"><div class="box"><h3>С 1995 года</h3>Больше 30 лет работы с сектами и культами.</div>
+<div class="box"><h3>Научная основа</h3>Исследования, публикации, преподавание в университетах. <a href="#team">Специалисты</a></div>
+<div class="box"><h3>Видны в СМИ</h3><a href="#media">Материалы</a></div></div>
+<p class="small">Экспертиза организаций для судов и ведомств: <a href="#expertise">подробнее</a></p>
+</section>
+
+<section class="v" id="relatives"><a class="back" href="#home">← Назад</a>
+<h1>Близкий в секте: с чего начать</h1>
+<p>Родные чувствуют шок и бессилие. Человек меняется, отдаляется, может прекратить общение. Кажется, что это навсегда. <b>Но это не так.</b> Универсального способа нет, поэтому мы начинаем с вашей конкретной истории.</p>
+<h2>Три вида помощи</h2>
+<ol class="steps"><li class="step"><b>Информационная.</b> Узнаём факты о группе и биографию лидера, чтобы выстроить стратегию.</li>
+<li class="step"><b>Психологическая.</b> Работаем с вами, потому что сам человек помощи не ищет. Цели: восстановить отношения, пробудить критическое мышление, подготовить к собственным решениям.</li>
+<li class="step"><b>Юридическая.</b> Оцениваем законность действий организации, помогаем с заявлениями в полицию и суд.</li></ol>
+<div class="box warn"><h3>Как проверить специалиста, любого, и нас тоже</h3>Квалифицированных людей в этой области мало. Смотрите образование и опыт, публикации. Не доверяйте отзывам на сервисных сайтах. Опасайтесь обещаний быстрого и гарантированного результата.</div>
+<p><a class="btn" href="#contact">Рассказать о ситуации</a></p>
+<p><span class="ph">Уточнить: как проходит первая консультация, формат, языки, стоимость или бесплатно</span></p></section>
+
+<section class="v" id="exmember"><a class="back" href="#home">← Назад</a>
+<h1>Жизнь после секты</h1>
+<p>После выхода часто остаются недоверие, страх снова быть обманутым, фобии, вина, пустота, злость, сомнения: «правильно ли я ушёл?». Близкие хотят помочь, но иногда делают хуже. Центров и групповой реабилитации в русскоязычном пространстве почти нет.</p>
+<img class="fig" src="https://antisekt.com/wp-content/uploads/2025/02/393520483_10223210578079681_6614925175595293489_n.jpg" alt=""><p>Программа «Жизнь после» опирается на психологическое исследование, десять лет опыта Латвийского комитета и западную практику реабилитации.</p>
+<div class="grid"><div class="box"><h3>Индивидуально</h3>Лучше на первых этапах.</div><div class="box"><h3>В группе</h3>Встреча с людьми, чей опыт похож на ваш.</div></div>
+<p><a class="btn" href="#contact">Записаться на разговор</a></p></section>
+
+<section class="v" id="lectures"><a class="back" href="#home">← Назад</a>
+<h1>Лекции и практические занятия</h1>
+<p>Информации о сектах в интернете много, но чаще это слухи. Мы разработали короткий курс: 8 лекций и 2 практических занятия.</p>
+<h2>Кого приглашать</h2>
+<ul class="l"><li>Школы и старшеклассников</li><li>Университеты и студентов</li><li>Родителей</li><li>Специалистов: педагогов, психологов, соцработников, силовые и экстренные службы</li><li>Государственные и общественные организации, частных лиц</li></ul>
+<p>Свяжитесь заранее: уточним время, место и аудиторию.</p>
+<h2>Темы</h2>
+<div class="box"><ol>
+<li>Секты и культы: определения, признаки, факты</li><li>Техники психологического воздействия</li><li>Как помочь человеку, находящемуся в секте</li><li>Как защитить подростков</li><li>Формирование новой идентичности в сектах</li><li>Кризис среднего возраста как фактор риска</li><li>Как жить рядом с членом секты</li><li>Взаимодействие с людьми, покинувшими секту</li><li>Практика: техники психологического насилия и защита</li><li>Практика: манипуляция логикой в убеждении</li></ol></div>
+<p><a class="btn" href="#contact">Пригласить лектора</a></p>
+<p><span class="ph">Добавить: онлайн или очно, длительность, цена, отзывы школ</span></p></section>
+
+<section class="v" id="expertise"><a class="back" href="#home">← Назад</a>
+<h1>Экспертиза признаков социальной опасности</h1>
+<p>Оцениваем организации, объединённые доктриной или идеологией: структуру, управление, степень контроля над участниками, адекватность требований, масштаб и особенности техник психологического насилия.</p>
+<p><b>Источники:</b> литература, сайты, аудио и видео, отзывы нынешних и бывших участников, мнения других экспертов. В особых случаях наблюдение и конфиденциальные каналы.</p>
+<h3>Кому нужно</h3><ul class="l"><li>Гражданские суды</li><li>Правоохранительные органы</li><li>Госструктуры, образовательные, социальные и медицинские учреждения перед решением о сотрудничестве</li><li>Решения о грантах и субсидиях</li></ul>
+<p>Результат: подробное заключение о наличии, степени и особенностях признаков социальной опасности.</p>
+<p><a class="btn" href="#contact">Запросить экспертизу</a></p></section>
+
+<section class="v" id="understand"><a class="back" href="#home">← Назад</a>
+<h1>Что мы называем сектой и культом</h1>
+<p>В проекте это организации, объединённые доктриной или идеологией, которые применяют психологическое насилие и создают социально-психологическую зависимость.</p>
+<div class="box">Единого научного согласия по терминам нет. Наша цель не осудить все нетрадиционные группы, а помочь конкретным пострадавшим. «Сектой» такие группы чаще всего называют сами люди.</div>
+<p><a class="btn" href="#contact">Задать вопрос</a></p></section>
+
+<section class="v" id="about"><a class="back" href="#home">← Назад</a>
+<h1>О нас</h1>
+<p>Организацию основали специалисты, много лет работающие в странах ЕС и России против психологического насилия сект и культов. Задачи: информационная, психологическая и юридическая помощь семьям; помощь бывшим участникам; просвещение; обучение специалистов; экспертиза групп.</p>
+<img class="fig" src="https://antisekt.com/wp-content/uploads/2025/02/fs_0_1455745115.jpg" alt=""><h2>История</h2><div class="tl">
+<p><b>1995</b> Активисты Русского молодёжного клуба бросают вызов крупнейшей секте Латвии.</p>
+<p><b>1996–1999</b> Ежегодные пикеты в Риге, на первом до 6000 участников.</p>
+<p><b>1997</b> Образован Комитет.</p>
+<p><b>2004</b> Профессиональный этап: психологи и юристы, постоянный приём пострадавших.</p>
+<p><b>2006</b> Круглый стол со всеми парламентскими партиями.</p>
+<p><b>2007</b> Самостоятельная организация; членство в FECRIS.</p>
+<p><b>2011</b> Начало работы с жителями России. <b>2012</b> Регулярные выступления на федеральном ТВ.</p>
+<p><b>2013</b> Экспертная помощь в суде по делу о секте, лишившей родителей единственного сына.</p>
+<p><b>2013–2016</b> Исследования; программа «Жизнь после».</p>
+<p><b>2017</b> Постоянная работа в России.</p></div></section>
+
+<section class="v" id="team"><a class="back" href="#home">← Назад</a><h1>Специалисты</h1><div class="ppl">
+<div class="box"><img class="pho" src="https://antisekt.com/wp-content/uploads/2025/02/elkin.jpg" alt=""><h3>Виктор Елкин</h3>Сопредседатель комитета, психолог, магистр. Консультирует родственников с 2004 года, эксперт судов Латвии и России.</div>
+<div class="box"><img class="pho" src="https://antisekt.com/wp-content/uploads/2025/02/460375066_830972539234861_2144104330819992896_n-958x1024.jpg" alt=""><h3>Светлана Крылова</h3>Реабилитация, лекции. Магистр психологии (ВШЭ) и филологии (Латвийский университет), автор программы «Жизнь после», член ICSA.</div>
+<div class="box"><img class="pho" src="https://antisekt.com/wp-content/uploads/2025/02/razorina.jpg" alt=""><h3>Дарья Разорина</h3>Психолог, лектор, аспирантка МГУ. Лекции о кризисах, которые приводят в секты, экспертиза.</div>
+<div class="box"><img class="pho" src="https://antisekt.com/wp-content/uploads/2025/02/nikiforov.jpg" alt=""><h3>Олег Никифоров</h3>Сопредседатель, доктор психологии, доцент. Социально-психологическая профилактика, экспертиза.</div></div>
+</section>
+
+<section class="v" id="media"><a class="back" href="#home">← Назад</a><h1>Мы в СМИ</h1>
+<img class="fig" src="https://antisekt.com/wp-content/uploads/2025/02/Screenshot-2025-02-15-at-17-03-59-207-Куда-идти-после-секты-Научное-исследование.-Утро-на-Балткоме-YouTube.jpg" alt=""><div class="box">Телеканал Балтком, утреннее шоу: «Куда идти после секты. Научное исследование» (ссылка на видео есть на текущем сайте).</div>
+<p><span class="ph">Сюда — ваши ссылки на публикации, ТВ и интервью. Я не стал придумывать, нужен список от вас</span></p></section>
+
+<section class="v" id="contact"><a class="back" href="#home">← Назад</a><h1>Связаться с нами</h1>
+<div class="box"><p>Телефон, WhatsApp, Telegram: <a href="tel:+37126644195">+371 26644195</a></p><p>Почта: <a href="mailto:antisekt@inbox.lv">antisekt@inbox.lv</a></p>
+<p><a class="btn" href="https://wa.me/37126644195">WhatsApp</a> <a class="btn l" href="https://t.me/+37126644195">Telegram</a></p></div>
+<div class="safe">Достаточно написать «Хочу посоветоваться». Подробности можно оставить на потом. <span class="ph">Добавить: срок ответа, политика конфиденциальности</span></div></section>
+</main>
+<a class="btn sticky" href="#contact">Написать нам</a>
+<footer><div class="w">Прототип редизайна, не официальный сайт. <a href="#team">Специалисты</a> · <a href="#media">СМИ</a> · <a href="#contact">Контакты</a></div></footer>
+<script>function r(){var h=(location.hash||'#home').slice(1);var e=document.getElementById(h)||document.getElementById('home');document.querySelectorAll('section.v').forEach(s=>s.classList.remove('on'));e.classList.add('on');scrollTo(0,0)}addEventListener('hashchange',r);r()</script>
+</body></html>
